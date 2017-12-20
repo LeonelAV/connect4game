@@ -9,15 +9,19 @@ class Game extends Component {
     for(let i=0; i<6; i++){
       cells.push(new Array(7).fill(0))
     }
-
     this.state = {player: false, cells:cells, winner:0}
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(){
+    console.log("clicked")
   }
 
   render() {
     return (
       <div>
         <h1>Blacks Turn</h1>
-        <Board />
+        <Board cells={this.state.cells} handleClick={this.handleClick}/>
         <button>Restart</button>
       </div>
     );

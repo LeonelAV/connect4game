@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Circle from './Circle';
-import Row from './Row';
+import Board from './Board';
 
 class Game extends Component {
   render() {
     return (
       <div>
-      <Row />
+        <Board />
       </div>
     );
   }

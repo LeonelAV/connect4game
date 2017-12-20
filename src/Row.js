@@ -1,0 +1,19 @@
+import React from 'react';
+import Cell from './Cell';
+
+function Row(props){
+  var style = {
+    display: "flex"
+  }
+  var cells = []
+  for (let i=0; i < 7; i++){
+    cells.push(<Cell />)
+  }
+  return (
+    <div style = {style}>
+    {cells}
+    </div>
+  )
+}
+
+export default Row;

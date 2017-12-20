@@ -4,7 +4,7 @@ import Row from './Row';
 function Board(props){
   var rows = []
   for (let i=5; i>=0; i--){
-    rows.push(<Row />)
+    rows.push(<Row key={i} row={i} cells={props.cells[i]} handleClick={props.handleClick}/>)
   }
   return (
     <div>

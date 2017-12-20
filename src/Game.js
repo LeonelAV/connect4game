@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
 import Circle from './Circle';
+import Cell from './Cell';
 
 class Game extends Component {
   render() {
     return (
       <div>
-      <Circle />
+      <Cell />
       </div>
     );
   }

@@ -13,8 +13,8 @@ class Game extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(){
-    console.log("clicked")
+  handleClick(row, col){
+    console.log("row: " + row + " | col: " + col)
   }
 
   render() {

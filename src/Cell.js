@@ -9,8 +9,8 @@ function Cell(props){
     backgroundColor:"yellow"
   }
   return (
-  <div style = {style}>
-    <Circle />
+  <div style = {style} onClick = {() => props.handleClick(props.row, props.col)}>
+    <Circle cell = {props.cell}/>
   </div>
   )
 }

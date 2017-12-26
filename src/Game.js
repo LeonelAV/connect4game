@@ -15,6 +15,13 @@ class Game extends Component {
 
   handleClick(row, col){
     console.log("row: " + row + " | col: " + col)
+    console.log(this.state.cells)
+    var temp = [];
+    for (let i=0; i < 6; i++){
+      temp.push(this.state.cells[i].slice())
+    }
+    temp[row][col] = 1;
+    this.setState({cells:temp})
   }
 
   render() {

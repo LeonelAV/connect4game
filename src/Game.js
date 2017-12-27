@@ -13,6 +13,15 @@ class Game extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  findAvailableRow(col){
+    for(var i=0; i<6; i++){
+      if(this.state.cells[i][col] == 0) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   handleClick(row, col){
     console.log("row: " + row + " | col: " + col)
     console.log(this.state.cells)

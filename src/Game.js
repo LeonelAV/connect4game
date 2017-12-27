@@ -27,7 +27,7 @@ class Game extends Component {
   render() {
     return (
       <div>
-        <h1>Blacks Turn</h1>
+        <h1>{this.state.player? "Blacks Turn" : "Red Turn"}</h1>
         <Board cells={this.state.cells} handleClick={this.handleClick}/>
         <button>Restart</button>
       </div>

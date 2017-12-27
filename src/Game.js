@@ -21,7 +21,7 @@ class Game extends Component {
       temp.push(this.state.cells[i].slice())
     }
     temp[row][col] = 1;
-    this.setState({cells:temp})
+    this.setState({cells:temp, player: !this.state.player})
   }
 
   render() {

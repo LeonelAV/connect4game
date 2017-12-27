@@ -29,6 +29,7 @@ class Game extends Component {
     for (let i=0; i < 6; i++){
       temp.push(this.state.cells[i].slice())
     }
+    var newRow = this.findAvailableRow(col)
     temp[row][col] = this.state.player? 1 : 2
     this.setState({cells:temp, player: !this.state.player})
   }

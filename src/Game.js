@@ -99,7 +99,12 @@ class Game extends Component {
     }
     var newRow = this.findAvailableRow(col)
     temp[row][col] = this.state.player? 1 : 2
-    this.setState({cells:temp, player: !this.state.player})
+    this.setState({cells:temp, player: !this.state.player}, () => {
+      if(this.checkVictory(newRow,col) > 0) {
+        console.log("win")
+        this.setState({winner:this.state.player?2:1})
+      }
+    })
   }
 
   render() {

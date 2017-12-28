@@ -91,6 +91,8 @@ class Game extends Component {
   }
 
   handleClick(row, col){
+    if(this.state.winner)
+      return
     console.log("row: " + row + " | col: " + col)
     console.log(this.state.cells)
     var temp = [];

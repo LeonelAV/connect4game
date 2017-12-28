@@ -109,6 +109,14 @@ class Game extends Component {
     })
   }
 
+  restart(){
+      var cells = [];
+      for(let i = 0; i < 6; i++ ){
+        cells.push(new Array(7).fill(0));
+      }
+      this.setState({ player : false, cells : cells, winner:0})
+  }
+
   render() {
     return (
       <div>

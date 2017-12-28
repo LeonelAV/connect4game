@@ -25,7 +25,7 @@ class Game extends Component {
         }
 
         while( rR >= 3 && cR >= 3){
-            if(c[rR][cR] == val && c[rR-1][cR-1] == val && c[rR-2][cR-2] == val && c[rR-3][cR-3] == val){
+            if(c[rR][cR] === val && c[rR-1][cR-1] === val && c[rR-2][cR-2] === val && c[rR-3][cR-3] === val){
                 return 1
             }
             rR--
@@ -41,7 +41,7 @@ class Game extends Component {
         }
 
         while(rL >= 3 && cL <= 3){
-            if(c[rL][cL] == val && c[rL-1][cL+1] == val && c[rL-2][cL+2] == val && c[rL-3][cL+3] == val){
+            if(c[rL][cL] === val && c[rL-1][cL+1] === val && c[rL-2][cL+2] === val && c[rL-3][cL+3] === val){
                 return 1
             }
             rL--
@@ -55,7 +55,7 @@ class Game extends Component {
         var val = this.state.player? 2:1;
 
         while( i >= 3){
-            if(c[row][i] == val && c[row][i-1] == val && c[row][i-2] == val && c[row][i-3] == val){
+            if(c[row][i] === val && c[row][i-1] === val && c[row][i-2] === val && c[row][i-3] === val){
                 return 1
             }
             i--
@@ -68,7 +68,7 @@ class Game extends Component {
         var val = this.state.player? 2: 1;
 
         if(i >= 3){
-            if(c[i][col] == val && c[i - 1][col] == val && c[i - 2][col] == val && c[i - 3][col] == val){
+            if(c[i][col] === val && c[i - 1][col] === val && c[i - 2][col] === val && c[i - 3][col] === val){
                 return 1
         }
         }
@@ -83,7 +83,7 @@ class Game extends Component {
 
   findAvailableRow(col){
     for(var i=0; i<6; i++){
-      if(this.state.cells[i][col] == 0) {
+      if(this.state.cells[i][col] === 0) {
         return i;
       }
     }
@@ -120,7 +120,7 @@ class Game extends Component {
   render() {
     return (
       <div>
-        <h1>{this.state.winner > 0 ?  this.state.winner == 1? "Black Wins":"Red Wins": this.state.player? "Blacks Turn" : "Reds Turn"} </h1>
+        <h1>{this.state.winner > 0 ?  this.state.winner === 1? "Black Wins":"Red Wins": this.state.player? "Blacks Turn" : "Reds Turn"} </h1>
         <Board cells={this.state.cells} handleClick={this.handleClick}/>
          <button onClick = { () => this.restart()}>Restart</button>
       </div>
